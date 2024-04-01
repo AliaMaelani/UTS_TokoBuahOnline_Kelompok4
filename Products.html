@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Toko Buah Online</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f3f3cc; /* kuning */
+    }
+
+    .logo {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .jumbotron {
+      background-color: #76e5b5; /* hijau */
+    }
+
+    .footer {
+      background-color: green; /* green */
+      padding: 20px; /* Add padding */
+      text-align: center; /* Center align text in the footer */
+      color: white; /* Set text color to white */
+      position: relative; /* Set position to relative */
+      bottom: 0; /* Set distance from the bottom */
+      width: 100%; /* Full width */
+    }
+
+    /* Reset margins and paddings for body and HTML */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%; /* Ensure body and HTML elements fill the entire viewport height */
+    }
+
+    /* Add some margin to the container containing the button */
+    .load-more-container {
+  margin-top: 20px; /* Adjust as needed */
+  margin-bottom: 30px; /* Adjust as needed */
+}
+
+
+    /* Add margin to search form */
+    .search-form {
+  margin-top: 20px; /* Add margin to the top */
+  margin-bottom: 20px;
+}
+
+
+    /* Add margin to filter dropdown */
+    .filter-dropdown {
+  margin-bottom: 20px;
+}
+
+/* Style for active navigation link */
+.navbar-nav .nav-link.active {
+    color: black; /* Change color to black when active */
+    font-weight: bold; /* Make the text bold when active */
+  }
+
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-6 d-flex align-items-center">
+              <img src="Logo buah.jpeg" alt="Toko Buah Online" class="logo">
+              <span class="ml-2 font-weight-bold">Toko Buah Online</span>
+            </div>
+            <div class="col-6 text-right">
+              <a href="file:///C:/Users/della/Downloads/Bootstrap/Tugas%20UTS%20PBW%20WEB%20BUAH/Keranjang%20belanja.html" class="btn btn-success">Keranjang Belanja</a>
+            </div>
+          </div>
+        </div>
+      </header>      
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Toko Buah Online</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Main Page utama.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About Toko Buah Online.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Locations">Locations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Contact us page.html">Contact us</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="search-form">
+          <div class="form-group">
+            <input type="text" class="form-control" id="search" placeholder="Search products...">
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6 text-right">
+        <!-- Filter Dropdown -->
+        <div class="filter-dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="filterDropdown" aria-haspopup="true" aria-expanded="false">
+            Filter
+          </button>
+          <div class="filter-dropdown-content" aria-labelledby="filterDropdown">
+            <button class="btn btn-light">Termurah</button>
+            <button class="btn btn-light">Termahal</button>
+            <button class="btn btn-light">Best Seller</button>
+            <button class="btn btn-light">Terbaru</button>
+            <button class="btn btn-light">Terkait</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <!-- Apple Card -->
+      <div class="col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="apples.jpeg" class="card-img-top" alt="Apple">
+          <div class="card-body">
+            <h5 class="card-title">Apple</h5>
+            <p class="card-text">Fresh and crispy apples from our orchards.</p>
+            <p class="card-text">Price: $1.50 per apple</p>
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Apple" 
+                    data-price="1.50" 
+                    data-image="apples.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+              </div>
+              <input type="number" class="form-control quantity-input" value="1" min="1">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Orange Card -->
+      <div class="col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="oranges.jpeg" class="card-img-top" alt="Orange">
+          <div class="card-body">
+            <h5 class="card-title">Orange</h5>
+            <p class="card-text">Juicy oranges picked at peak ripeness.</p>
+            <p class="card-text">Price: $1.50 per orange</p>
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Orange" 
+                    data-price="1.50" 
+                    data-image="oranges.jpeg">Add to Cart</button>
+                    <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                        </div>
+                        <input type="number" class="form-control quantity-input" value="1" min="1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+      <!-- Banana Card -->
+      <div class="col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="bananas.jpeg" class="card-img-top" alt="Banana">
+          <div class="card-body">
+            <h5 class="card-title">Banana</h5>
+            <p class="card-text">Sweet and nutritious bananas.</p>
+            <p class="card-text">Price: $1.50 per banana</p>
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Banana" 
+                    data-price="1.50" 
+                    data-image="bananas.jpeg">Add to Cart</button>
+                    <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                        </div>
+                        <input type="number" class="form-control quantity-input" value="1" min="1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+      <!-- Strawberry Card -->
+      <div class="col-lg-3 mb-4">
+        <div class="card h-100">
+          <img src="strawberries.jpeg" class="card-img-top" alt="Strawberry">
+          <div class="card-body">
+            <h5 class="card-title">Strawberry</h5>
+            <p class="card-text">Fresh strawberries bursting with flavor.</p>
+            <p class="card-text">Price: $1.50 per Strawberry</p>
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Strawberry" 
+                    data-price="1.50" 
+                    data-image="strawberries.jpeg">Add to Cart</button>
+                    <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                        </div>
+                        <input type="number" class="form-control quantity-input" value="1" min="1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+  <div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="grapes.jpeg" class="card-img-top" alt="Grape">
+            <div class="card-body">
+              <h5 class="card-title">Grape</h5>
+              <p class="card-text">Delicious grapes perfect for snacking.</p>
+              <p class="card-text">Price: $1.50 per Grape</p>
+              <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Grape" 
+            data-price="1.50" 
+            data-image="grapes.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="watermelons.jpeg" class="card-img-top" alt="Watermelon">
+            <div class="card-body">
+              <h5 class="card-title">Watermelon</h5>
+              <p class="card-text">Sweet and refreshing watermelon slices.</p>
+              <p class="card-text">Price: $3.50 per Watermelon</p>
+              <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Watermelon" 
+            data-price="3.50" 
+            data-image="watermelons.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="pineapples.jpeg" class="card-img-top" alt="Pineapple">
+            <div class="card-body">
+              <h5 class="card-title">Pineapple</h5>
+              <p class="card-text">Tropical pineapple chunks bursting with flavor.</p>
+              <p class="card-text">Price: $1.50 per Pineapple</p>
+              <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Pineapple" 
+            data-price="1.50" 
+            data-image="pineapples.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="kiwis.jpeg" class="card-img-top" alt="Kiwi">
+            <div class="card-body">
+              <h5 class="card-title">Kiwi</h5>
+              <p class="card-text">Exotic and tangy kiwi slices.</p>
+              <p class="card-text">Price: $1.50 per kiwi</p>
+             <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Kiwi" 
+            data-price="1.50" 
+            data-image="kiwis.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="mangoes.jpeg" class="card-img-top" alt="Mango">
+            <div class="card-body">
+              <h5 class="card-title">Mango</h5>
+              <p class="card-text">Juicy mango slices bursting with sweetness.</p>
+              <p class="card-text">Price: $1.50 per Mango</p>
+             <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Mango" 
+            data-price="1.50" 
+            data-image="mangoes.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="pears.jpeg" class="card-img-top" alt="Pear">
+            <div class="card-body">
+              <h5 class="card-title">Pear</h5>
+              <p class="card-text">Sweet and crunchy pears perfect for snacking.</p>
+              <p class="card-text">Price: $1.50 per pear</p>
+            <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Pear" 
+                    data-price="1.50" 
+                    data-image="pears.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 mb-4">
+            <div class="card h-100">
+            <img src="jackfruit.jpeg" class="card-img-top" alt="Jackfruit">
+            <div class="card-body">
+              <h5 class="card-title">Jackfruit</h5>
+              <p class="card-text">Sweet and aromatic jackfruits perfect for desserts or smoothies.</p>
+              <p class="card-text">Price: $3.00 per pound</p>
+             <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Jackfruit" 
+            data-price="3.00" 
+            data-image="jackfruit.jpeg">Add to Cart</button>
+    <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="durian.jpeg" class="card-img-top" alt="Durian">
+            <div class="card-body">
+              <h5 class="card-title">Durian</h5>
+              <p class="card-text">Rich and creamy durians with a distinctive smell.</p>
+              <p class="card-text">Price: $5.00 per fruit</p>
+              <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Durian" 
+            data-price="5.00" 
+            data-image="durian.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="dragonfruit.jpeg" class="card-img-top" alt="Dragon Fruit">
+            <div class="card-body">
+              <h5 class="card-title">Dragon Fruit</h5>
+              <p class="card-text">Exotic and refreshing dragon fruits with a crunchy texture.</p>
+              <p class="card-text">Price: $2.50 per fruit</p>
+              <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Dragon Fruit" 
+            data-price="2.50" 
+            data-image="dragonfruit.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="plums.jpeg" class="card-img-top" alt="Plum">
+            <div class="card-body">
+              <h5 class="card-title">Plum</h5>
+              <p class="card-text">Sweet and juicy plums perfect for snacking or baking.</p>
+              <p class="card-text">Price: $1.25 per plum</p>
+            <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Plum" 
+            data-price="1.25" 
+            data-image="plums.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="lemons.jpeg" class="card-img-top" alt="Lemon">
+            <div class="card-body">
+              <h5 class="card-title">Lemon</h5>
+              <p class="card-text">Tangy and versatile lemons perfect for cooking and beverages.</p>
+              <p class="card-text">Price: $0.75 per lemon</p>
+              <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Lemon" 
+            data-price="0.75" 
+            data-image="lemons.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+            <img src="avocado.jpeg" class="card-img-top" alt="Avocado">
+            <div class="card-body">
+              <h5 class="card-title">Avocado</h5>
+              <p class="card-text">Creamy and nutritious avocados perfect for salads or toast.</p>
+              <p class="card-text">Price: $2.00 per avocado</p>
+              <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+            data-name="Avocado" 
+            data-price="2.00" 
+            data-image="avocado.jpeg">Add to Cart</button>
+            <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                </div>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+<div class="col-lg-3 mb-4">
+    <div class="card h-100">
+          <img src="dates.jpeg" class="card-img-top" alt="Dates">
+          <div class="card-body">
+            <h5 class="card-title">Dates</h5>
+            <p class="card-text">Sweet and nutritious dates perfect for snacking or desserts.</p>
+            <p class="card-text">Price: $2.00 per pound</p>
+            <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Dates" 
+                    data-price="2.00" 
+                    data-image="dates.jpeg">Add to Cart</button>
+                    <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                        </div>
+                        <input type="number" class="form-control quantity-input" value="1" min="1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+  <div class="col-lg-3 mb-4">
+    <div class="card h-100">
+          <img src="guavas.jpeg" class="card-img-top" alt="Guava">
+          <div class="card-body">
+            <h5 class="card-title">Guava</h5>
+            <p class="card-text">Juicy and aromatic guavas perfect for fresh consumption or juices.</p>
+            <p class="card-text">Price: $2.50 per pound</p>
+            <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Guava" 
+                    data-price="2.50" 
+                    data-image="guavas.jpeg">Add to Cart</button>
+                    <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                        </div>
+                        <input type="number" class="form-control quantity-input" value="1" min="1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+  <div class="col-lg-3 mb-4">
+    <div class="card h-100">
+          <img src="lychees.jpeg" class="card-img-top" alt="Lychee">
+          <div class="card-body">
+            <h5 class="card-title">Lychee</h5>
+            <p class="card-text">Sweet and refreshing lychees perfect for desserts or eating fresh.</p>
+            <p class="card-text">Price: $3.00 per pound</p>
+            <!-- Add to Cart button with data attributes -->
+            <button class="btn btn-primary add-to-cart" 
+                    data-name="Lychee" 
+                    data-price="3.00" 
+                    data-image="lychees.jpeg">Add to Cart</button>
+                    <div class="input-group mb-3 quantity-input-group" style="display: none;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                        </div>
+                        <input type="number" class="form-control quantity-input" value="1" min="1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+  <!-- Button for displaying more products -->
+  <div class="container load-more-container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <button id="loadMoreBtn" class="btn btn-primary">Tampilkan Lebih Banyak</button>
+      </div>
+    </div>
+  </div>
+  
+   <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>&copy; 2024 Toko Buah Online. All rights reserved. | About Us | Contact Us</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('nav ul li a').click(function(){
+          $('li a').removeClass("active");
+          $(this).addClass("active");
+        });
+    
+        // Search functionality
+        $('#search').on('keyup', function() {
+          var searchText = $(this).val().toLowerCase();
+          $('.card').each(function() {
+            var fruitName = $(this).find('.card-title').text().toLowerCase();
+            if (fruitName.indexOf(searchText) === -1) {
+              $(this).hide();
+            } else {
+              $(this).show();
+            }
+          });
+        });
+
+        $(document).ready(function(){
+  // Toggle filter dropdown content when the filter dropdown button is clicked
+        $('.filter-dropdown .dropdown-toggle').click(function(){
+        $('.filter-dropdown-content').toggle();
+        });
+        });
+
+    
+          // Jumlah awal produk yang ditampilkan
+      var visibleProducts = 9;
+  
+  // Semua elemen kartu buah
+  var allProducts = $('.row .col-lg-4');
+  
+  // Menyembunyikan semua produk yang tidak termasuk dalam jumlah awal
+  allProducts.slice(visibleProducts).hide();
+  
+  // Menangani klik tombol "Tampilkan Lebih Banyak"
+  $('#loadMoreBtn').click(function(){
+    // Menambahkan 9 pada jumlah produk yang ditampilkan
+    visibleProducts += 9;
+    
+    // Menampilkan produk sesuai dengan jumlah yang ditentukan
+    allProducts.slice(0, visibleProducts).show();
+    
+    // Menyembunyikan tombol jika semua produk telah ditampilkan
+    if (visibleProducts >= allProducts.length) {
+      $('#loadMoreBtn').hide();
+    }
+  });
+  });
+  </script>
+  
+  <script>
+      $(document).ready(function(){
+        // Handling plus button click
+        $('.plus-btn').click(function(){
+          var input = $(this).closest('.card-body').find('.quantity-input');
+          var currentValue = parseInt(input.val());
+          input.val(currentValue + 1);
+        });
+    
+        // Handling minus button click
+        $('.minus-btn').click(function(){
+          var input = $(this).closest('.card-body').find('.quantity-input');
+          var currentValue = parseInt(input.val());
+          if (currentValue > 1) {
+            input.val(currentValue - 1);
+          }
+        });
+    
+        // Handling add to cart button click
+        $('.add-to-cart').click(function(){
+          // Hide all quantity input groups
+          $('.quantity-input-group').hide();
+          // Show quantity input group for the clicked card only
+          $(this).siblings('.quantity-input-group').show();
+    
+          var quantity = $(this).closest('.card-body').find('.quantity-input').val();
+          alert('Added ' + quantity + ' item(s) to cart.');
+        });
+    
+        // Handling "Keranjang Belanja" button click
+        $('.btn-success').click(function(){
+          var selectedFruit = JSON.parse(sessionStorage.getItem('selectedFruit'));
+          window.location.href = 'keranjang.html?fruit=' + encodeURIComponent(JSON.stringify(selectedFruit));
+        });
+      });
+    </script>
+
+<!-- Add this script to your product page where the "Add to Cart" buttons are located -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const fruitName = this.dataset.name;
+          const fruitPrice = this.dataset.price;
+          const fruitImage = this.dataset.image;
+  
+          // Call a function to add the selected fruit to the cart
+          addToCart(fruitName, fruitPrice, fruitImage);
+        });
+      });
+  
+      function addToCart(name, price, image) {
+        // Retrieve existing cart items from session storage
+        let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+  
+        // Add the selected fruit to the cart
+        cartItems.push({ name, price, image });
+  
+        // Store the updated cart items in session storage
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+  
+        // Alert the user that the item has been added to the cart (you can remove this if you want)
+        alert('Added ' + name + ' to cart.');
+      }
+    });
+  </script>
+  
+  <script>
+    // Function to add 'active' class to the current page link
+    document.addEventListener("DOMContentLoaded", function() {
+      const currentLocation = location.href;
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  
+      // Add 'active' class to the current page link
+      navLinks.forEach(function(navLink) {
+        if (navLink.href === currentLocation) {
+          navLink.classList.add("active");
+        }
+      });
+    });
+  </script>
+  
+  </body>
+  </html>
+  

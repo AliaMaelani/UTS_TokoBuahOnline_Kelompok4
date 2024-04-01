@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locations - Toko Buah Online</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f3f3cc; /* kuning */
+    }
+
+    .logo {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .jumbotron {
+      background-color: #76e5b5; /* hijau */
+    }
+
+    .footer {
+      background-color: green; /* green */
+      padding: 20px; /* Add padding */
+      text-align: center; /* Center align text in the footer */
+      color: white; /* Set text color to white */
+      position: relative; /* Set position to relative */
+      bottom: 0; /* Set distance from the bottom */
+      width: 100%; /* Full width */
+    }
+
+    /* Reset margins and paddings for body and HTML */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%; /* Ensure body and HTML elements fill the entire viewport height */
+    }
+
+    /* Add some margin to the container containing the button */
+    .load-more-container {
+      margin-top: 20px; /* Adjust as needed */
+      margin-bottom: 30px; /* Adjust as needed */
+    }
+
+    /* Add margin to map */
+    /* Center the image within the fake map container */
+    #fake-map {
+      height: 300px; /* Adjust height as needed */
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #fake-map img {
+      max-width: 100%;
+      max-height: 100%; /* Ensure the image does not exceed the container height */
+      cursor: pointer; /* Change cursor to pointer when hovering over the image */
+    }
+
+    /* Zoom in and out effects */
+    #fake-map img.zoom-in {
+      transform: scale(2);
+    }
+
+    #fake-map img.zoom-out {
+      transform: scale(1);
+    }
+
+    /* Style for active navigation link */
+  .navbar-nav .nav-link.active {
+    color: black; /* Change color to black when active */
+    font-weight: bold; /* Make the text bold when active */
+  }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-6 d-flex align-items-center">
+              <img src="Logo buah.jpeg" alt="Toko Buah Online" class="logo">
+              <span class="ml-2 font-weight-bold">Toko Buah Online</span>
+            </div>
+            <div class="col-6 text-right">
+              <a href="file:///C:/Users/della/Downloads/Bootstrap/Tugas%20UTS%20PBW%20WEB%20BUAH/Keranjang%20belanja.html" class="btn btn-success">Keranjang Belanja</a>
+            </div>
+          </div>
+        </div>
+      </header>  
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">Toko Buah Online</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="Main Page utama.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About Toko Buah Online.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Products.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Locations.html">Locations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact us page.html">Contact us</a>
+              </ul>
+            </div>
+          </div>
+        </nav>      
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Our Locations</h1>
+    <p>Find our offline stores near you</p>
+  </div>
+</div>
+
+<!-- Fake Map -->
+<div id="fake-map">
+  <img src="../Tugas UTS PBW WEB BUAH/Screenshot (535).png" alt="Fake Map" style="max-width: 100%; height: auto;" id="zoom-image">
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; 2024 Toko Buah Online. All rights reserved. | About Us | Contact Us</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  // JavaScript to toggle zoom in and out
+  document.getElementById('zoom-image').addEventListener('click', function() {
+    this.classList.toggle('zoom-in');
+    this.classList.toggle('zoom-out');
+  });
+</script>
+
+ <script>
+  // Function to add 'active' class to the current page link
+  document.addEventListener("DOMContentLoaded", function() {
+    const currentLocation = location.href;
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+    // Add 'active' class to the current page link
+    navLinks.forEach(function(navLink) {
+      if (navLink.href === currentLocation) {
+        navLink.classList.add("active");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

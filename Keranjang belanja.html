@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang Belanja - Toko Buah Online</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f3f3cc; /* kuning */
+    }
+
+    .logo {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .jumbotron {
+      background-color: #76e5b5; /* hijau */
+    }
+
+    .footer {
+      background-color: green; /* green */
+      padding: 20px; /* Add padding */
+      text-align: center; /* Center align text in the footer */
+      color: white; /* Set text color to white */
+      position: relative; /* Set position to relative */
+      bottom: 0; /* Set distance from the bottom */
+      width: 100%; /* Full width */
+    }
+
+    /* Reset margins and paddings for body and HTML */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%; /* Ensure body and HTML elements fill the entire viewport height */
+    }
+
+    /* Add some margin to the container containing the button */
+    .load-more-container {
+      margin-top: 20px; /* Adjust as needed */
+      margin-bottom: 30px; /* Adjust as needed */
+    }
+
+    /* Add margin to search form */
+    .search-form {
+      margin-top: 20px; /* Add margin to the top */
+      margin-bottom: 20px;
+    }
+
+    /* Add margin to filter dropdown */
+    .filter-dropdown {
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-6 d-flex align-items-center">
+              <img src="Logo buah.jpeg" alt="Toko Buah Online" class="logo">
+              <span class="ml-2 font-weight-bold">Toko Buah Online</span>
+            </div>
+            <div class="col-6 text-right">
+              <a href="Keranjang belanja.html" class="btn btn-success">Keranjang Belanja</a>
+            </div>
+          </div>
+        </div>
+      </header>  
+    
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Toko Buah Online</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="Main Page utama.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About Toko Buah Online.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Locations.html">Locations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contact us page.html">Contact us</a>
+          <li class="nav-item">
+            <a href="#" class="btn btn-success ml-2">Buy</a> <!-- "Buy" button -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- HTML structure for the fruit container table -->
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody class="fruit-container">
+        <!-- Apple Card -->
+        <tr>
+          <td><img src="apples.jpeg" class="card-img-top" alt="Apple" style="width: 100px;"></td>
+          <td>Apple</td>
+          <td>$1.50</td>
+          <td>
+            <input type="number" class="form-control quantity-input" value="1" min="1">
+          </td>
+          <td>$1.50</td>
+        </tr>
+  
+        <!-- Orange Card -->
+        <tr>
+          <td><img src="oranges.jpeg" class="card-img-top" alt="Orange" style="width: 100px;"></td>
+          <td>Orange</td>
+          <td>$1.50</td>
+          <td>
+            <input type="number" class="form-control quantity-input" value="1" min="1">
+          </td>
+          <td>$1.50</td>
+        </tr>
+  
+        <!-- Banana Card -->
+        <tr>
+          <td><img src="bananas.jpeg" class="card-img-top" alt="Banana" style="width: 100px;"></td>
+          <td>Banana</td>
+          <td>$1.50</td>
+          <td>
+            <input type="number" class="form-control quantity-input" value="1" min="1">
+          </td>
+          <td>$1.50</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+<!-- Your existing footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; 2024 Toko Buah Online. All rights reserved. | About Us | Contact Us</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to display selected fruits in the shopping cart
+    function displaySelectedFruits() {
+      var selectedFruits = JSON.parse(sessionStorage.getItem('cartItems'));
+      if (selectedFruits) {
+        var fruitContainer = $(".fruit-container");
+        fruitContainer.empty(); // Clear existing content
+        selectedFruits.forEach(function(fruit) {
+          var fruitCard = `
+            <div class="col-lg-4 mb-4">
+              <div class="card">
+                <img src="${fruit.image}" class="card-img-top" alt="${fruit.name}">
+                <div class="card-body">
+                  <h5 class="card-title">${fruit.name}</h5>
+                  <p class="card-text">Price: $${fruit.price.toFixed(2)}</p>
+                </div>
+              </div>
+            </div>
+          `;
+          fruitContainer.append(fruitCard);
+        });
+      }
+    }
+    // Call the function to display selected fruits when the page loads
+    displaySelectedFruits();
+  });
+</script>
+
+</body>
+</html>
